@@ -1,4 +1,4 @@
-const USAR_FIREBASE = false;
+const USAR_FIREBASE = true;
 
 const PRODUCTOS_DE_PRUEBA = [
     { id: "p1", nombre: "Casado", precio: 3500 },
