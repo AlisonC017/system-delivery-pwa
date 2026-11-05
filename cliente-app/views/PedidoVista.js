@@ -9,6 +9,11 @@ export default class PedidoVista {
         this.totalPedido = document.getElementById("totalPedido");
         this.totalEncabezado = document.getElementById("totalEncabezado");
         this.cantidadItems = document.getElementById("cantidadItems");
+        this.inputNombre= document.getElementById("inputNombre");
+        this.inputDireccion= document.getElementById("inputDireccion");
+        this.botonEnviar= document.getElementById("btnEnviarPedido");
+        this.modalCuerpo= document.getElementById("modalConfirmacionCuerpo");
+        this.modal= new bootstrap.Modal(document.getElementById("modalConfirmacion"));
         this.formatoMoneda = new Intl.NumberFormat("es-CR", {
             style: "currency",
             currency: "CRC",
@@ -16,6 +21,7 @@ export default class PedidoVista {
             maximumFractionDigits: 2
         });
     }
+//envio del pedido (dila)
 
     alAgregar(manejador) {
         this.formulario.addEventListener("submit", evento => {
@@ -32,6 +38,33 @@ export default class PedidoVista {
             }
         });
     }
+
+    alEnviar(manejador) {
+        this.botonEnviar.addEventListener("click", manejador);
+    }
+
+    datosCliente() {
+        return {
+            nombre: this.inputNombre.value.trim(),
+            direccion: this.inputDireccion.value.trim()
+        };
+    }
+
+    bloquearEnvio(bloquear) {
+        this.botonEnviar.disabled = bloquear;
+        this.botonEnviar.textContent = bloquear ? "Enviando..." : "Enviar pedido";
+    }
+
+    limpiarCliente() {
+        this.inputNombre.value = "";
+        this.inputDireccion.value = "";
+    }
+
+    mostrarConfirmacion(id, nombre) {
+        this.modalCuerpo.textContent = `Gracias ${nombre}, tu pedido #${id} fue registrado correctamente`;
+        this.modal.show();
+    }
+    //(fin)
 
     mostrarProductos(productos) {
         this.selectProducto.replaceChildren(new Option("Seleccione un producto", ""));
