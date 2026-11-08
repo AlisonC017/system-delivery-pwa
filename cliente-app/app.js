@@ -4,9 +4,17 @@ import PedidosService from "./services/PedidosService.js";
 import NotificacionesService from "./services/NotificacionesService.js";
 import PedidoVista from "./views/PedidoVista.js";
 import PedidoController from "./controllers/PedidoController.js";
+import UbicacionService from "./services/UbicacionService.js";
 
 const pedido = new Pedido();
 const vista = new PedidoVista();
-const pedidoController = new PedidoController(pedido, vista, new ProductosService(), new PedidosService(), new NotificacionesService());
+const pedidoController = new PedidoController(
+  pedido,
+  vista,
+  new ProductosService(),
+  new PedidosService(),
+  new NotificacionesService(),
+  new UbicacionService(),
+);
 
 pedidoController.iniciar();

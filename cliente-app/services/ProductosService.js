@@ -21,16 +21,19 @@ export default class ProductosService {
     }
 
     async listarDesdeFirestore() {
-        //El import lo pongo aqui para que no rompa la app si no se tiene configurado Firebase aun.
+    try {
         const { db, collection, getDocs } = await import("../firebase.js");
+
         const respuesta = await getDocs(collection(db, "productos"));
 
-        return respuesta.docs
-            .map(documento => ({
-                id: documento.id,
-                nombre: documento.data().nombre,
-                precio: Number(documento.data().precio)
-            }))
-            .sort((a, b) => a.nombre.localeCompare(b.nombre));
+        return respuesta.docs.map(documento => ({
+            id: documento.id,
+            nombre: documento.data().nombre,
+            precio: Number(documento.data().precio)
+        }));
+    } catch (error) {
+        console.error("Error Firebase:", error);
+        return [];
     }
+}
 }
