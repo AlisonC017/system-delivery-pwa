@@ -9,7 +9,7 @@ export default class NotificacionesService {
             const registro = await navigator.serviceWorker.ready;
             await registro.showNotification("Comercio PWA", {
                 body: mensaje,
-                icon: "/images/icon512_rounded.png",
+                icon: "/icons/icon-192.png",
             });
         } catch (error) {
             console.error("Error al notificar:", error);
