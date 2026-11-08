@@ -1,7 +1,7 @@
 export default class Pedido {
     constructor(id, datos) {
         this.id = id;
-        this.cliente = datos.cliente;
+        this.cliente = datos.nombre;
         this.direccion = datos.direccion;
         this.productos = datos.productos || [];
         this.total = datos.total;
