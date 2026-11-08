@@ -1,0 +1,26 @@
+{
+    "name": "Comercio PWA",
+    "short_name": "Comercio PWA",
+    "description": "Aplicación de Comercio para gestionar pedidos",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#f2c750",
+    "background_color": "#027eac",
+    "lang": "es-CR",
+    "icons": [
+        {
+            "src": "icons/icon512_maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon512_maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

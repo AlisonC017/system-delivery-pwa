@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Skydash Admin</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#0d6efd">
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="theme/vendors/feather/feather.css">
+        <link rel="stylesheet"
+            href="theme/vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="theme/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet"
+            href="theme/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+        <link rel="stylesheet"
+            href="theme/vendors/ti-icons/css/themify-icons.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="theme/css/vertical-layout-light/style.css">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="theme/images/favicon.png" />
+    </head>
+    <body>
+        <div class="container-scroller">
+            <!-- partial:partials/_navbar.html -->
+            <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+                <div
+                    class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                    <a class="navbar-brand brand-logo mr-5"
+                        href="index.html"><img src="theme/images/logo.svg"
+                            class="mr-2" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini"
+                        href="index.html"><img src="theme/images/logo-mini.svg"
+                            alt="logo" /></a>
+                </div>
+                <div
+                    class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+                    <h5 class="mb-0">Pedidos recibidos</h5>
+                    <button type="button" id="btn-permiso-notificaciones"
+                        class="btn btn-sm btn-outline-primary">Activar
+                        notificaciones</button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_settings-panel.html -->
+
+                <!-- partial -->
+                <!-- partial:partials/_sidebar.html -->
+
+                <!-- partial -->
+                <div class="main-panel"style="width:100%">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="listaPedidos"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content-wrapper ends -->
+                    <!-- partial:partials/_footer.html -->
+                    <footer class="footer">
+                        <div
+                            class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span
+                                class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright
+                                © 2021. Premium <a
+                                    href="https://www.bootstrapdash.com/"
+                                    target="_blank">Bootstrap admin template</a>
+                                from BootstrapDash. All rights reserved.</span>
+                            <span
+                                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted
+                                & made with <i
+                                    class="ti-heart text-danger ml-1"></i></span>
+                        </div>
+                        <div
+                            class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span
+                                class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed
+                                by <a href="https://www.themewagon.com/"
+                                    target="_blank">Themewagon</a></span>
+                        </div>
+                    </footer>
+                    <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+
+        <div class="modal fade" id="modalEntrega" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pedido entregado</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Cerrar"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body" id="modalEntregaTexto"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary"
+                            data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- plugins:js -->
+        <script src="theme/vendors/js/vendor.bundle.base.js"></script>
+
+        <script type="module" src="app.js"></script>
+        <script>
+    //--------- PWA CONFIG ---------
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => { initServiceWorker(); });
+    }
+    function initServiceWorker() {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(() => console.log("Service worker is registered successfully"))
+        .catch((error) => console.error(`failed to register service worker, error: ${error}`));
+    }
+  </script>
+
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+
+        <!-- End custom js for this page-->
+    </body>
+
+</html>
