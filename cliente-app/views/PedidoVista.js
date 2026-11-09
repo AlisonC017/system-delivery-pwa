@@ -88,9 +88,9 @@ export default class PedidoVista {
     this.inputDireccion.readOnly = false;
     this.inputDireccion.placeholder = "Escriba su dirección de entrega";
   }
-
   mostrarConfirmacion(id, nombre) {
-    this.modalCuerpo.textContent = `Gracias ${nombre}, tu pedido #${id} fue registrado correctamente`;
+    const codigo = id.slice(0, 6).toUpperCase();
+    this.modalCuerpo.textContent = `Gracias ${nombre}, tu pedido #${codigo} fue registrado correctamente`;
     this.modal.show();
   }
   //(fin)

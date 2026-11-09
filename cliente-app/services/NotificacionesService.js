@@ -2,7 +2,7 @@
 
 export default class NotificacionesService {
     async pedirPermiso(){
-        if(!("Notificacion" in window)){
+        if(!("Notification" in window)){
             return "denied";
 
         }
@@ -13,7 +13,7 @@ export default class NotificacionesService {
     }
 
     async mostrar (titulo, cuerpo){
-        if(!("Notificacion" in window) || Notification.permission!== "granted"){
+        if(!("Notification" in window) || Notification.permission!== "granted"){
             return;
         }
         const opciones = {body: cuerpo, icon: "images/logo.png"};

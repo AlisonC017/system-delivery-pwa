@@ -93,9 +93,9 @@ export default class PedidoController {
       const id = await this.pedidosService.registrar(cliente, this.pedido);
       this.vista.mostrarConfirmacion(id, cliente.nombre);
       await permiso;
-      this.notificador.mostrar(
+            this.notificador.mostrar(
         "Pedido enviado!",
-        `Tu pedido #${id} fue registrado correctamente`,
+        `Tu pedido #${id.slice(0, 6).toUpperCase()} fue registrado correctamente`,
       );
 
       this.pedido.vaciar();
